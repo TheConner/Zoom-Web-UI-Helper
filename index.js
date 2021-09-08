@@ -30,23 +30,25 @@
     /**
      * Transforms a given URL into the zoom web client URL
      * @param {URL} path Some URL string, i.e https://zoom.us/j/12345678910
+     * @param {UrlSearchparams} search Query string 
      * @returns an augmented URL for use with the zoom web client, such as https://zoom.us/wc/join/1234567890
      */
-    function getWebClientMeetingURL(path) {
+    function getWebClientMeetingURL(path, search) {
+        // Get the patterns that we care about
         let matches = [...path.matchAll(getMeetingRegex())][0];
         console.log(matches);
         // Group 2 needs to be augmented to go from /j/ to /wc/join
         matches[1] = matches[1].replace('/j/', '/wc/join/');
-        
-        // Group 3 appends to group 2
-        return matches[1] + matches[2];
+
+        // Group 3 appends to group 2, preserve query params
+        return matches[1] + matches[2] + search;
     }
 
     // Determine if we can execute
     function execute() {
         if (isMeetingURL(window.location.href)) {
             // This URL matched our criteria, extract it 
-            const newUrl = getWebClientMeetingURL(window.location.href);
+            const newUrl = getWebClientMeetingURL(window.location.href, window.location.search);
             window.location = newUrl;
         }
     }
