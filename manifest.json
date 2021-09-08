@@ -1,0 +1,40 @@
+{
+
+    "manifest_version": 2,
+    "name": "Zoom Web UI Helper",
+    "version": "1.0",
+
+    "description": "Provides an easy way to bypass the zoom meeting launcher",
+
+    "permissions": [
+        "activeTab",
+        "storage"
+      ],
+
+    "icons": {
+      "48": "icons/meeting-room-vector.svg",
+      "96": "icons/meeting-room-vector.svg"
+    },
+    "browser_action": {
+        "default_icon": {
+          "19": "icons/meeting-room-vector.svg",
+          "38": "icons/meeting-room-vector.svg"
+        },
+        "default_title": "Zoom Web UI Helper",
+        "default_popup": "popup/config.html"
+      },
+  
+    "content_scripts": [
+      {
+        "matches": ["*://*.zoom.us/*"],
+        "js": ["index.js"]
+      }
+    ],
+
+    "browser_specific_settings": {
+        "gecko": {
+          "id": "zoomwebforwarder@advtech.ca"
+        }
+      }
+  
+  }
