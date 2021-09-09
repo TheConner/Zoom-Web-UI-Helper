@@ -15,7 +15,7 @@
     //      Group 2       Group 3
     function getMeetingRegex() {
         // Returns a new global regex object... This is because global regexes are stateful, and should only be used once
-        return /(.*zoom.us\/j\/)(.+?\b)/g;
+        return /(.*zoom.us\/[j,s]\/)(.+?\b)/g;
     }
 
     /**
@@ -34,11 +34,14 @@
      * @returns an augmented URL for use with the zoom web client, such as https://zoom.us/wc/join/1234567890
      */
     function getWebClientMeetingURL(path, search) {
+        const meetingPath = /\/[j,s]\//g;
+
         // Get the patterns that we care about
         let matches = [...path.matchAll(getMeetingRegex())][0];
         console.log(matches);
+        
         // Group 2 needs to be augmented to go from /j/ to /wc/join
-        matches[1] = matches[1].replace('/j/', '/wc/join/');
+        matches[1] = matches[1].replace(meetingPath, '/wc/join/');
 
         // Group 3 appends to group 2, preserve query params
         return matches[1] + matches[2] + search;
