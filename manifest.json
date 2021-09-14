@@ -1,56 +1,53 @@
 {
-  "manifest_version": 2,
-  "name": "Zoom Web UI Helper",
-  "version": "1.0.0.2",
-  "description": "Provides an easy way to bypass the zoom meeting launcher",
-  "permissions": [
-    "activeTab",
-    "storage"
-  ],
-  "icons": { 
-   "128": "icons/videocam_black_48dp_128.png" 
-  },
-  "browser_action": {
-    "default_icon": "icons/videocam_white_48dp_128.png",
-    "theme_icons": [
-      {
-        "light": "icons/videocam_white_48dp_32.png",
-        "dark": "icons/videocam_black_48dp_32.png",
-        "size": 32
-      },
-      {
-        "light": "icons/videocam_white_48dp_48.png",
-        "dark": "icons/videocam_black_48dp_48.png",
-        "size": 48
-      },
-      {
-        "light": "icons/videocam_white_48dp_128.png",
-        "dark": "icons/videocam_black_48dp_128.png",
-        "size": 128
-      }
+    "manifest_version": 2,
+    "name": "Zoom Web UI Helper",
+    "version": "1.0.1.0",
+    "description": "Provides an easy way to bypass the zoom meeting launcher",
+    "permissions": [
+        "activeTab",
+        "storage"
     ],
-    "default_title": "Zoom Web UI Helper",
-    "default_popup": "popup/config.html"
-  },
-  "background": {
-    "scripts": [
-      "node_modules/webextension-polyfill/dist/browser-polyfill.js"
-    ]
-  },
-  "content_scripts": [
-    {
-      "matches": [
-        "*://*.zoom.us/*"
-      ],
-      "js": [
-        "node_modules/webextension-polyfill/dist/browser-polyfill.js",
-        "index.js"
-      ]
+    "icons": {
+        "128": "icons/videocam_black_48dp_128.png"
+    },
+    "browser_action": {
+        "default_icon": "icons/videocam_white_48dp_128.png",
+        "theme_icons": [{
+                "light": "icons/videocam_white_48dp_32.png",
+                "dark": "icons/videocam_black_48dp_32.png",
+                "size": 32
+            },
+            {
+                "light": "icons/videocam_white_48dp_48.png",
+                "dark": "icons/videocam_black_48dp_48.png",
+                "size": 48
+            },
+            {
+                "light": "icons/videocam_white_48dp_128.png",
+                "dark": "icons/videocam_black_48dp_128.png",
+                "size": 128
+            }
+        ],
+        "default_title": "Zoom Web UI Helper",
+        "default_popup": "popup/config.html"
+    },
+    "background": {
+        "scripts": [
+            "node_modules/webextension-polyfill/dist/browser-polyfill.js"
+        ]
+    },
+    "content_scripts": [{
+        "matches": [
+            "*://*.zoom.us/*"
+        ],
+        "js": [
+            "node_modules/webextension-polyfill/dist/browser-polyfill.js",
+            "index.js"
+        ]
+    }],
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "zoomwebforwarder@advtech.ca"
+        }
     }
-  ],
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "zoomwebforwarder@advtech.ca"
-    }
-  }
 }

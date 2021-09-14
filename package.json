@@ -1,28 +1,28 @@
 {
-  "name": "zoom-web-ui-helper",
-  "version": "1.0.0",
-  "description": "A browser extension to automatically redirect you to the Zoom Web UI",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://gitlab.advtech.ca/netwinder/zoom-web-ui-helper.git"
-  },
-  "keywords": [
-    "Zoom",
-    "Browser-Extension",
-    "Firefox",
-    "Chrome"
-  ],
-  "author": "Conner Bradley",
-  "license": "MIT",
-  "devDependencies": {
-    "webextension-polyfill": "^0.8.0"
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.4",
-    "bulma": "^0.9.3"
-  }
+    "name": "zoom-web-ui-helper",
+    "version": "1.0.1.0",
+    "description": "A browser extension to automatically redirect you to the Zoom Web UI",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://gitlab.advtech.ca/netwinder/zoom-web-ui-helper.git"
+    },
+    "keywords": [
+        "Zoom",
+        "Browser-Extension",
+        "Firefox",
+        "Chrome"
+    ],
+    "author": "Conner Bradley",
+    "license": "MIT",
+    "devDependencies": {
+        "webextension-polyfill": "^0.8.0"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.15.4",
+        "bulma": "^0.9.3"
+    }
 }
