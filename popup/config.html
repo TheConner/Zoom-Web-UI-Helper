@@ -4,7 +4,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="bulma.min.css">
+    
+    <link rel="stylesheet" href="../node_modules/bulma/css/bulma.min.css">
     <link rel="stylesheet" href="config.css"/>
   </head>
 
@@ -25,8 +26,21 @@
             </div>
         </form>
 
+        <form id="refresh" style="display: none;">
+            <hr />
+            <div class="control">
+                <p>In order for the settings to activate, please refresh the page</p>
+                <button id="refreshButt">
+                    <i class="fas fa-sync fa-2x"></i>
+                </button>
+            </div>
+        </form>
+
     </div>
-    <script src="config.js"></script>
+    <script defer src="../node_modules/@fortawesome/fontawesome-free/js/solid.js"></script>
+    <script defer src="../node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"></script>
+    <script type="application/javascript" src="../node_modules/webextension-polyfill/dist/browser-polyfill.js"></script>
+    <script type="application/javascript" src="config.js"></script>
 </body>
 
 </html> 
